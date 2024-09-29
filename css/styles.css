@@ -48,13 +48,20 @@ nav {
 }
 
 .logo-section {
-    text-align: center;
-    padding: 30px 0;
+    background-color: #a19683;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .logo {
-    max-width: 200px; /* Задайте размер логотипа */
+    width: 100%;
     height: auto;
+    display: flex;
+    object-fit: cover;
+    object-position: center;
 }
 
 main {
@@ -76,4 +83,33 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.text-with-image-left, .text-with-image-right {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.text-with-image-left img.left-image {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.text-with-image-right img.right-image {
+    width: 200px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.right-aligned {
+    text-align: right;
+    max-width: 600px;
+}
+
+.left-aligned {
+    text-align: left;
+    max-width: 600px;
 }
