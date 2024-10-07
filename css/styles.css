@@ -8,7 +8,7 @@ body {
 
 header {
     background-color: #232323;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,16 +29,16 @@ nav {
 }
 
 .menu li {
-    margin: 0 15px;
+    margin: 0 40px;
 }
 
 .menu li a {
     color: #F4EEE5;
     font-family: "Courgette", cursive;
-    font-weight: 400;
-    font-style: normal;
     font-size: 24px;
-    text-decoration-line: none;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
 
 
@@ -57,11 +57,14 @@ nav {
 }
 
 .logo {
-    width: 100%;
-    height: auto;
-    display: flex;
-    object-fit: cover;
-    object-position: center;
+    height: 40vh;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex; */
+    object-fit: contain;
+    /* background-size: contain; */
+    /* object-position: center; */
 }
 
 main {
@@ -80,36 +83,9 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
 
-.text-with-image-left, .text-with-image-right {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    padding: 20px;
-}
 
-.text-with-image-left img.left-image {
-    width: 200px;
-    height: auto;
-    margin-right: 20px;
-}
-
-.text-with-image-right img.right-image {
-    width: 200px;
-    height: auto;
-    margin-left: 20px;
-}
-
-.right-aligned {
-    text-align: right;
-    max-width: 600px;
-}
-
-.left-aligned {
-    text-align: left;
-    max-width: 600px;
-}
