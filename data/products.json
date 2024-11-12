@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Light Roast",
+      "image": {
+        "src": "images/product_1.jpg",
+        "alt": "Light Roast"
+      },
+      "description": "Bright and fruity, with a crisp acidity that highlights the natural flavors of the coffee beans.",
+      "price": "$2.50"
+    },
+    {
+      "name": "Medium Roast",
+      "image": {
+        "src": "images/product_2.jpg",
+        "alt": "Medium Roast"
+      },
+      "description": "Balanced flavor with a smooth body, offering notes of caramel and chocolate with a mild acidity.",
+      "price": "$3.00"
+    },
+    {
+      "name": "Medium-Dark Roast",
+      "image": {
+        "src": "images/product_3.jpg",
+        "alt": "Medium-Dark Roast"
+      },
+      "description": "Rich and bold, with a fuller body and deep notes of cocoa and spice, providing a more intense flavor.",
+      "price": "$3.50"
+    },
+    {
+      "name": "Dark Roast",
+      "image": {
+        "src": "images/product_4.jpg",
+        "alt": "Dark Roast"
+      },
+      "description": "Strong and smoky, featuring a bold, robust flavor with low acidity and hints of dark chocolate.",
+      "price": "$3.75"
+    }
+  ]

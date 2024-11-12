@@ -1,0 +1,126 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4EEE5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courgette', cursive;
+    font-weight: 700;
+    color: #000000;
+}
+
+a.navbar-brand {
+    color: #232323;
+    font-family: "Courgette", cursive;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+a.navbar-brand:hover {
+    color: #33323284;
+}
+
+
+.navbar-expand-lg .navbar-nav .nav-link.active {
+    color: #232323;
+    font-family: "Courgette", cursive;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    overflow-y: auto;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.active:hover {
+    color: #f4eee5d1;
+    background-color: #555;
+    border-radius: 5px;
+    padding: 20px;
+    overflow-y: auto;
+    
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    overflow-y: auto;
+}
+
+.navbar-collapse {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.logo-section {
+    background-color: #a19683;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 40vh;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex; */
+    object-fit: contain;
+    /* background-size: contain; */
+    /* object-position: center; */
+}
+
+.row {
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.icon_blocks {
+    text-align: center;
+    justify-content: center;
+    border: none !important;
+    box-shadow: none !important; 
+    margin-top: 30px;
+
+
+}
+
+.circle-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    
+}
+
+main {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+

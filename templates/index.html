@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="container">
+        <h2>Want to have a good time and drink some coffee?</h2>
+        
+        <!-- Left section -->
+        <section class="row align-items-center my-5">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/cafe.jpg') }}" alt="Cafe Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h3>Come to our cafe</h3>
+                <p>Our Cafe was created by the owners of Mobirise eCommerce 
+                Website Builder to bring endeavor-ready clients, locals, and
+                travelers a truly unique coffee experience.</p>
+            </div>
+        </section>
+
+        <!-- Right section with text and image -->
+        <section class="row align-items-center my-5">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/coffee-roasters.jpg') }}" alt="Cup of Coffee" class="img-fluid">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h3>Tasty Coffee</h3>
+                <p>Most of all, we are committed to giving you the best customer
+                service as well as a comfortable environment to sit with good friends,
+                research, study, and work.</p>
+            </div>
+        </section>
+    </main>       
+{% endblock %}

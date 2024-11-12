@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="container">
+        <h2>Subscriptions</h2>
+        
+        <div class="row">
+          <!-- Product 1 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="icon_blocks flex justify-center">
+                  <img src="{{ url_for('static', filename='images/fast_cooking.jpg') }}" class="circle-image" alt="Fast Cooking">
+                  <div class="card-body">
+                      <h5 class="card-title">Fast Cooking</h5>
+                      <p class="card-text">Our preferred, straightforward and also unique method of developing cool coffee.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="icon_blocks flex justify-center">
+                  <img src="{{ url_for('static', filename='images/fast_delivery.jpg') }}" class="circle-image" alt="Fast Delivery">
+                  <div class="card-body">
+                      <h5 class="card-title">Free Delivery</h5>
+                      <p class="card-text">We are the Cafe with a bold vision to make a distinction in both our neighborhood and also worldwide neighborhoods.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+              <div class="icon_blocks flex justify-center">
+                  <img src="{{ url_for('static', filename='images/excellent_coffee.jpg') }}" class="circle-image" alt="Excellent Coffee">
+                  <div class="card-body">
+                      <h5 class="card-title">Excellent Coffee</h5>
+                      <p class="card-text">We use a flash-chill method to lock in natural flavors, delivering fresh and rich cold coffee every time.</p>
+                  </div>
+              </div>
+          </div>
+      </div> 
+    </main>
+{% endblock %}
