@@ -54,6 +54,16 @@ a.navbar-brand:hover {
     overflow-y: auto;
 }
 
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
 .logo-section {
     background-color: #a19683;
     width: 100%;
@@ -112,6 +122,26 @@ main {
     margin: 0 auto;
 }
 
+.menu-item .card__quick-add {
+    position: relative;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.menu-item:hover .card__quick-add {
+    display: block;
+    opacity: 1;
+}
 
 
 footer {

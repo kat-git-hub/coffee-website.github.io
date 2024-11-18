@@ -8,66 +8,19 @@
         {% for product in products %}
         <div class="col-lg-3 col-md-6 mb-4 menu-item">
             <div class="card">
-                <img src="{{ url_for('static', filename=product.image.src) }}" class="card-img-top" alt="{{ product.image.alt }}">
+                <img src="{{ url_for('static', filename=product.image.src) }}" class="card-img-top"
+                    alt="{{ product.image.alt }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description }}</p>
                     <p class="price">{{ product.price }}</p>
+                    <div product-card-quick-add="" data-product-handle="sermon" class="card__quick-add hidden lg:block  ">
+                        ADD
+                    </div>
                 </div>
             </div>
         </div>
-    {% endfor %}
-        <!-- Product 1 -->
-        <!-- <div class="col-lg-3 col-md-6 mb-4 menu-item">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/product_1.jpg') }}" class="card-img-top" alt="Light Roast">
-                <div class="card-body">
-                    <h5 class="card-title">Light Roast</h5>
-                    <p class="card-text">Bright and fruity, with a crisp acidity that highlights the natural flavors of
-                        the coffee beans.</p>
-                    <p class="price">$2.50</p>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Product 2 -->
-        <!-- <div class="col-lg-3 col-md-6 mb-4 menu-item">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/product_2.jpg') }}" class="card-img-top" alt="Medium Roast">
-                <div class="card-body">
-                    <h5 class="card-title">Medium Roast</h5>
-                    <p class="card-text">Balanced flavor with a smooth body, offering notes of caramel and chocolate
-                        with a mild acidity.</p>
-                    <p class="price">$3.00</p>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Product 3 -->
-        <!-- <div class="col-lg-3 col-md-6 mb-4 menu-item">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/product_3.jpg') }}" class="card-img-top" alt="Medium-Dark Roast">
-                <div class="card-body">
-                    <h5 class="card-title">Medium-Dark Roast</h5>
-                    <p class="card-text">Rich and bold, with a fuller body and deep notes of cocoa and spice, providing
-                        a more intense flavor.</p>
-                    <p class="price">$3.50</p>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Product 4 -->
-        <!-- <div class="col-lg-3 col-md-6 mb-4 menu-item">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/product_4.jpg') }}" class="card-img-top" alt="Dark Roast">
-                <div class="card-body">
-                    <h5 class="card-title">Dark Roast</h5>
-                    <p class="card-text">Strong and smoky, featuring a bold, robust flavor with low acidity and hints of
-                        dark chocolate.</p>
-                    <p class="price">$3.75</p>
-                </div>
-            </div>
-        </div> -->
+        {% endfor %}
     </div>
 </main>
 {% endblock %}

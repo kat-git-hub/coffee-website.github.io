@@ -1,14 +1,13 @@
 from flask import Flask, render_template
-import json
+from dotenv import load_dotenv
+from forms import LoginForm
+from models import load_json
 import os
 
+
+load_dotenv()
 app = Flask(__name__)
-
-
-def load_json(file_name):
-    json_path = os.path.join(app.root_path, 'data', 'products.json')
-    with open(json_path, 'r') as f:
-        return json.load(f)
+app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
 
 
 @app.route('/')
@@ -30,6 +29,12 @@ def subscribe():
 @app.route('/about_us')
 def about_us():
     return render_template('about_us.html', title="About Us")
+
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Sign In', form=form)
 
 
 if __name__ == '__main__':
