@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, flash
 from dotenv import load_dotenv
 from forms import LoginForm
 from models import load_json
@@ -31,9 +31,13 @@ def about_us():
     return render_template('about_us.html', title="About Us")
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect('/index')
     return render_template('login.html', title='Sign In', form=form)
 
 

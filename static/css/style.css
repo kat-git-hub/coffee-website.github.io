@@ -26,9 +26,9 @@ a.navbar-brand:hover {
 .navbar-expand-lg .navbar-nav .nav-link.active {
     color: #232323;
     font-family: "Courgette", cursive;
-    font-size: 24px;
+    font-size: clamp(14px, 2vw, 24px);
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     transition: background-color 0.3s;
     overflow-y: auto;
 }
@@ -37,7 +37,7 @@ a.navbar-brand:hover {
     color: #f4eee5d1;
     background-color: #555;
     border-radius: 5px;
-    padding: 20px;
+    padding: 5px;
     overflow-y: auto;
     
 }
@@ -52,6 +52,10 @@ a.navbar-brand:hover {
 .navbar-collapse {
     max-height: 300px;
     overflow-y: auto;
+}
+
+.navbar-toggler {
+    margin-left: auto;
 }
 
 
@@ -78,10 +82,7 @@ a.navbar-brand:hover {
     width: auto;
     margin-left: auto;
     margin-right: auto;
-    /* display: flex; */
     object-fit: contain;
-    /* background-size: contain; */
-    /* object-position: center; */
 }
 
 .row {
@@ -154,3 +155,16 @@ footer {
     bottom: 0;
 }
 
+
+@media (max-width: 768px) {
+    .navbar-expand-lg .navbar-nav .nav-link.active {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar-expand-lg .navbar-nav .nav-link.active {
+        font-size: 10px;
+    }
+}
