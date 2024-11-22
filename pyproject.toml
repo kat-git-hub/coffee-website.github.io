@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "test-flask"
-version = "0.1.1"
+version = "0.1.2"
 description = "flask app"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+packages = [
+  { include = "test_flask" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -12,6 +15,8 @@ flake8 = "^7.1.1"
 jinja2 = "^3.1.4"
 flask-wtf = "^1.2.2"
 python-dotenv = "^1.0.1"
+flask-sqlalchemy = "^3.1.1"
+flask-migrate = "^4.0.7"
 
 
 [build-system]

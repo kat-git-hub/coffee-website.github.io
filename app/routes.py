@@ -1,45 +1,43 @@
-from flask import Flask, render_template, redirect, flash
-from dotenv import load_dotenv
-from forms import LoginForm
-from models import load_json
-import os
+from flask import Blueprint, render_template, redirect, flash, url_for
+#from dotenv import load_dotenv
+from app.forms import LoginForm
+from app.models import load_json
+#import os
 
 
-load_dotenv()
-app = Flask(__name__)
-app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
+# load_dotenv()
+# app = Flask(__name__)
+# app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
+
+bp = Blueprint('main', __name__)
 
 
-@app.route('/')
+@bp.route('/')
 def index():
     return render_template('index.html', title="Coffee Cafe")
 
 
-@app.route('/coffee')
+@bp.route('/coffee')
 def coffee():
     products = load_json('products.json')
     return render_template('coffee.html', products=products, title="Coffee")
 
 
-@app.route('/subscribe')
+@bp.route('/subscribe')
 def subscribe():
     return render_template('subscription.html', title="Subscribe")
 
 
-@app.route('/about_us')
+@bp.route('/about_us')
 def about_us():
     return render_template('about_us.html', title="About Us")
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
         flash('Login requested for user {}, remember_me={}'.format(
             form.username.data, form.remember_me.data))
-        return redirect('/index')
+        return redirect(url_for('main.index'))
     return render_template('login.html', title='Sign In', form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5001)
