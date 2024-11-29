@@ -19,5 +19,6 @@ jobs:
         make install
     - name: Lint with flake8
       run: |
-        make lint
+        pip3 install flake8
+        flake8 .
 
