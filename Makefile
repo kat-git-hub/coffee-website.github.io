@@ -1,7 +1,7 @@
 install:
 	poetry install
 lint:
-	poetry run flake8 app.py
+	poetry run flake8 app
 runserver:
 	poetry run python run.py
 migrate:

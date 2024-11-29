@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #F4EEE5;
+    height: 200vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: #000000;
 }
+
 
 a.navbar-brand {
     color: #232323;
@@ -39,7 +41,6 @@ a.navbar-brand:hover {
     border-radius: 5px;
     padding: 5px;
     overflow-y: auto;
-    
 }
 
 .navbar-nav {
@@ -48,6 +49,7 @@ a.navbar-brand:hover {
     width: 90%;
     overflow-y: auto;
 }
+
 
 .navbar-collapse {
     max-height: 300px;
@@ -58,6 +60,13 @@ a.navbar-brand:hover {
     margin-left: auto;
 }
 
+.sticky-nav {
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+    background-color: #F4EEE5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -66,6 +75,7 @@ a.navbar-brand:hover {
   'GRAD' 0,
   'opsz' 24
 }
+
 
 
 .logo-section {
@@ -168,3 +178,6 @@ footer {
         font-size: 10px;
     }
 }
+
+
+

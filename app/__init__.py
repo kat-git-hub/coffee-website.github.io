@@ -1,16 +1,17 @@
-import os
 from flask import Flask
-from dotenv import load_dotenv
-from app import routes
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
+from config import Config
+from sqlalchemy import create_engine
 
 
-def create_app():
-    load_dotenv()
-    app = Flask(__name__, template_folder='../templates', static_folder='../static')
-    app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
+class Base(DeclarativeBase):
+    pass
 
-    with app.app_context():
-        #from app import routes
-        app.register_blueprint(routes.bp)
 
-    return app
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
+app.config.from_object(Config)
+db = SQLAlchemy(model_class=Base)
+db.init_app(app)
+engine = create_engine("sqlite://", echo=True)
+from app import routes  # noqa: F401, E402

@@ -1,43 +1,50 @@
-from flask import Blueprint, render_template, redirect, flash, url_for
-#from dotenv import load_dotenv
-from app.forms import LoginForm
+from flask import render_template, redirect, flash, url_for
+from app.forms import LoginForm, RegistrationForm
 from app.models import load_json
-#import os
+from app import app
+from app.models import User
+from app import db
 
 
-# load_dotenv()
-# app = Flask(__name__)
-# app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
-
-bp = Blueprint('main', __name__)
-
-
-@bp.route('/')
+@app.route('/')
 def index():
     return render_template('index.html', title="Coffee Cafe")
 
 
-@bp.route('/coffee')
+@app.route('/coffee')
 def coffee():
     products = load_json('products.json')
     return render_template('coffee.html', products=products, title="Coffee")
 
 
-@bp.route('/subscribe')
+@app.route('/subscribe')
 def subscribe():
     return render_template('subscription.html', title="Subscribe")
 
 
-@bp.route('/about_us')
+@app.route('/about_us')
 def about_us():
     return render_template('about_us.html', title="About Us")
 
 
-@bp.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.username.data, form.remember_me.data))
-        return redirect(url_for('main.index'))
     return render_template('login.html', title='Sign In', form=form)
+
+
+@app.route('/create_user', methods=['GET', 'POST'])
+def create_user():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        existing_user = User.query.filter_by(username=form.username.data).first()
+        if existing_user is None:
+            user = User(username=form.username.data, email=form.email.data)
+            user.set_password(form.password.data)
+            db.session.add(user)
+            db.session.commit()
+            flash('Registration successful! Please log in.')
+            return redirect(url_for('login'))
+        else:
+            flash('User already exists!')
+    return render_template('create_user.html', title='Register', form=form)
